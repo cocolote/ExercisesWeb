@@ -1,0 +1,31 @@
+#El usuario ingresa un parrafo y las palabras que quiere modificar del mismo
+#el programa busca las palabras a modificar y les pone REDACTED
+
+print "Enter a text to be redacted:"
+text = gets.chomp
+
+print "Enter words to redact:"
+text_re = gets.chomp
+
+words = text.split(" ")
+words_re = text_re.split(" ")
+text_redacted = " "
+
+words.each do |word|
+    word_d = word
+    word_d.downcase!
+    words_re.each do |word_re|
+        word_re_d = word_re
+        word_re_d.downcase!
+        if word_d == word_re_d
+            word = "REDACTED"
+        end
+    end
+    if text_redacted <= " "
+        text_redacted = word.capitalize!
+    else
+        text_redacted = "#{text_redacted} #{word}"
+    end
+end
+
+puts text_redacted
