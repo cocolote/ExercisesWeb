@@ -1,0 +1,10 @@
+#Fizz Buzz eje
+
+i = 0
+
+100.times do
+    i += 1                                    #incremento de 1 en 1 a i
+    print i % 3 == 0 ? "Fizz" : nil           #pregunto si es divisible x 3 true: imprime Fizz false: vacio, nada (nil) 
+    print i % 5 == 0 ? "Buzz" : nil           #misma historia 
+    puts i % 5 != 0 && i % 3 != 0 ? i : nil   #si i no es divisible x 3 y x 5 true: imprimo i false: (nil)
+end
